@@ -1,0 +1,24 @@
+{
+    "name": "silverslice/quick-rabbit",
+    "description": "RabbitMQ queue",
+    "keywords": ["queue", "RabbitMQ"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Igor Mikheev",
+            "email": "silver_slice@mail.ru"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "php-amqplib/php-amqplib": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Silverslice\\QuickRabbit\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    }
+}

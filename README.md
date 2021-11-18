@@ -115,3 +115,18 @@ class TestJob extends AbstractJob
 }
 
 ```
+
+For testing / local development SyncQueue class may be useful.
+SyncQueue executes job synchronously:
+
+```php
+
+$queue = new SyncQueue($connection);
+
+$job = new TestJob();
+$job->message = 'My first job';
+
+// will be executed synchronously
+$queue->push($job);
+
+```

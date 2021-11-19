@@ -69,6 +69,7 @@ class Worker
         foreach ([SIGINT, SIGTERM, SIGHUP] as $sig) {
             pcntl_signal($sig, function () {
                 $this->shouldExit = true;
+                $this->debug("Worker stopped");
             });
         }
     }
@@ -118,7 +119,9 @@ class Worker
     protected function debug($msg)
     {
         if ($this->debug) {
-            echo '[' . date('d.m.Y H:i:s') . '] ' . $msg . PHP_EOL;
+            $date = date('d.m.Y H:i:s');
+            $pid = getmypid();
+            echo "[$date] [$pid] $msg" . PHP_EOL;
         }
     }
 }

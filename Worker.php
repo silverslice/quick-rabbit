@@ -119,7 +119,7 @@ class Worker
     protected function debug($msg)
     {
         if ($this->debug) {
-            $date = date('d.m.Y H:i:s');
+            $date = date('Y-m-d H:i:s');
             $pid = getmypid();
             echo "[$date] [$pid] $msg" . PHP_EOL;
         }

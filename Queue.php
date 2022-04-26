@@ -19,7 +19,7 @@ class Queue
     {
         $this->connection->getChanel()->basic_publish(
             $this->createMessage($job, $headers),
-            $this->connection->exchangeName,
+            $this->connection->exchangeName
         );
     }
 
